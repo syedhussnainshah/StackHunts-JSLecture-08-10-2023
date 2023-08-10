@@ -8,31 +8,18 @@
 </head>
 
 <body>
-    <button onclick="Claculate()">Click To Calculate</button>
+    <input type="text" id="TodoInput">
+    <button id="BTN">Clik Me</button>
+    <h1 id="h1">This is a text Place</h1>
     <script>
-        // Create a new Date object
-        const date = new Date();
-
-        // Set the time zone to Pakistani time zone (Asia/Karachi)
-        const options = { timeZone: 'Asia/Karachi' };
-
-        // Extract day, month, and year in Pakistani time zone
-        const day = date.toLocaleString('en-US', { day: 'numeric', ...options });
-        const month = date.toLocaleString('en-US', { month: 'numeric', ...options });
-        const year = date.toLocaleString('en-US', { year: 'numeric', ...options });
-
-        console.log(`Day: ${day}`);
-        console.log(`Month: ${month}`);
-        console.log(`Year: ${year}`);
-
-        function Claculate() {
-
-            let a = prompt("Enter Your First Value");
-            let operator = prompt("What you want in Operator");
-            let b = prompt("Enter Your Second Value");
-            let Solve = eval(Number(a) + operator + Number(b));
-            console.log(Solve);
-        }
+        let btn = document.getElementById("BTN");
+        let todoinput = document.getElementById("TodoInput");
+        todoinput.addEventListener('keyup', function () {
+            let h1 = document.getElementById("h1");
+            h1.innerText = todoinput.value;
+        });
+        // btn.addEventListener('click', function () {
+        // })
 
     </script>
 </body>
